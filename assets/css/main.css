@@ -1,60 +1,114 @@
-/**
-* Template Name: Selecao
-* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+  --video-background-url: url("path/to/your/video.mp4"); /* Replace with the actual path to your video */
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2a2c39; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #01c5d3; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Global Colors */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #01c5d3; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #060606; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #01c5d3; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --background-color: #ffffff;
+  --default-color: #1c1c1c;
+  --heading-color: #3c7ef0;
+  --accent-color: #1d00f6;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Nav Menu Colors */
+:root {
+  --nav-color: #ffffff;
+  --nav-hover-color: #3c7ef0;
+  --nav-mobile-background-color: #3c7ef0;
+  --nav-dropdown-background-color: #0109fe;
+  --nav-dropdown-color: #000000;
+  --nav-dropdown-hover-color: #01c5d3;
+}
 
+/* Color Presets */
 .light-background {
   --background-color: #f9f9f9;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #00a8a8;
+  --background-color: #3c7ef0;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #404356;
+  --surface-color: #a8a8f3;
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  padding: 0;
+}
+
+.hero .carousel-container {
+  position: relative;
+  z-index: 2; /* Ensure content is above the video */
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+/* Video Background with Specific Size */
+.hero-video {
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 3800px; /* Video width */
+  height: 1620px;  /* Video height */
+  transform: translate(-50%, -50%); /* Center the video */
+  object-fit: cover; /* Ensures the video covers the container */
+  z-index: 1; /* Video stays in the background */
+}
+
+/* SVG Wave Styles */
+.hero-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 3; /* Ensure SVG is above video */
+}
+
+/* Additional Styling for Text and Buttons */
+.hero h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.btn-get-started {
+  background-color: var(--accent-color);
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+
+.btn-get-started:hover {
+  background-color: var(--heading-color);
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -143,8 +197,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
-  --heading-color: #ffffff;
+  --background-color: rgba(255, 0, 0, 0);
+  --heading-color: #3c7ef0;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
@@ -671,7 +725,7 @@ section,
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, var(--background-color) 0%, color-mix(in srgb, var(--background-color) 90%, white 10%) 100%);
+  
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -2288,7 +2342,7 @@ section,
   background-color: var(--surface-color);
   margin-top: 30px;
   padding: 30px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(241, 4, 4, 0.1);
 }
 
 .comment-form form h4 {
